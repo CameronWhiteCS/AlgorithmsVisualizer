@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Info } from 'icon/info.svg';
+import { FormCheck } from 'react-bootstrap';
 
 const Navigation = (props) => {
 
     return (
 
         <nav id="navigation">
+
+            <label id="navigation-checkbox-label" htmlFor="navigation-checkbox">☰</label>
+            <input id="navigation-checkbox" type="checkbox" />
+
 
             <div id="navigation-links">
                 <div className="navigation-category">
@@ -18,7 +23,7 @@ const Navigation = (props) => {
                         <li><Link to="/bubble">Bubble Sort</Link></li>
                         <li><Link to="/heap">Heap Sort</Link></li>
                         <li><Link to="/merge">Merge Sort</Link></li>
-                        <li><Link to="/bogo">Bogo Sort</Link></li>
+                        <li><Link to="/bogo">BogoSort</Link></li>
                     </ul>
                 </div>
 
@@ -40,11 +45,8 @@ const Navigation = (props) => {
             </div>
 
 
-            <span id="navigation-help-icon">
-                <Link to="/about">
-                    <Info />
-                </Link>
-            </span>
+
+
         </nav>
 
     )

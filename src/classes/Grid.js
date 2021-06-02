@@ -109,19 +109,19 @@ class Grid {
 
         const neighbors = [north, south, east, west];
 
-        if (north?.state != 'wall' && east?.state != 'wall') {
+        if (north?.state !== 'wall' && east?.state !== 'wall') {
             neighbors.push(northEast);
         }
 
-        if (north?.state != 'wall' && west?.state != 'wall') {
+        if (north?.state !== 'wall' && west?.state !== 'wall') {
             neighbors.push(northWest);
         }
 
-        if (south?.state != 'wall' && east?.state != 'wall') {
+        if (south?.state !== 'wall' && east?.state !== 'wall') {
             neighbors.push(southEast);
         }
 
-        if (south?.state != 'wall' && west?.state != 'wall') {
+        if (south?.state !== 'wall' && west?.state !== 'wall') {
             neighbors.push(southWest);
         }
 

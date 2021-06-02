@@ -66,7 +66,7 @@ const KMeansCanvas = (props) => {
     });
 
     return (
-        <canvas width={(props.width + 1) * props.scaleFactor} height={(props.width + 1) * props.scaleFactor} id="kmeans" />
+        <canvas width={(props.width + 1) * props.scaleFactor} height={(props.width + 1) * props.scaleFactor} style={{margin: '0 auto', display: 'block', maxWidth: '100%'}} id="kmeans" />
     )
 
 }

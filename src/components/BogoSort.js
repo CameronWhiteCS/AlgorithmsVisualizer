@@ -8,16 +8,13 @@ const BogoSort = () => {
         <>
 
             <h1>
-                Bogosort
+                BogoSort
             </h1>
             <p>
-               Bogosort is a humorous sorting algorithm described below.
-            </p>
-            <p>
-                Time complexity: O(&infin;)
+               Bogosort is a humorous sorting algorithm described below. In the worst case, BogoSort never terminates. 
             </p>
             <h2>
-                Bogosort Description
+                BogoSort Description
             </h2>
             <ol>
                 <li>Take an unsorted list and put it into a random order. </li>
@@ -25,7 +22,7 @@ const BogoSort = () => {
                 <li>Repeat steps 1 and 2 until the list is sorted.</li>
             </ol>
 
-            <SortingAlgorithm name="Bogosort" sort={bogoSort} />
+            <SortingAlgorithm name="BogoSort" sort={bogoSort} />
         </>
     );
 

@@ -62,7 +62,7 @@ class PriorityQueue {
     insert = (value) => {
         let index = this.size + 1;
         this.heapArray.splice(index, 0, value);
-        if(this.size > 0) this.trickleUp(index); //@@@@@@@@@@@@@@@
+        if(this.size > 0) this.trickleUp(index);
         this.size += 1;
         this.partitionIndex += 1;
     }
@@ -79,7 +79,7 @@ class PriorityQueue {
         let left = this.getLeftChild(index);
         let right = this.getRightChild(index);
 
-        while ((left?.value < this.heapArray[index].value && left !== undefined) || (right?.value < this.heapArray[index].value) && right !== undefined) {
+        while ( (left?.value < this.heapArray[index].value && left !== undefined) || ((right?.value < this.heapArray[index].value) && right !== undefined)) {
 
             if (left === undefined && right !== undefined) {
                 this.swap(index, index * 2 + 1);
@@ -89,15 +89,12 @@ class PriorityQueue {
                 index *= 2;
             } else {
 
-                let larger;
                 let smaller;
 
                 if(right.value < left.value) {
                     smaller = right;
-                    larger = left;
                 } else {
                     smaller = left;
-                    larger = right;
                 }
 
                 if (right === smaller)  {
@@ -128,11 +125,15 @@ class PriorityQueue {
  */
 const dijkstra = (grid, showAnimation, heuristicWeight, heuristicFunction) => {
 
-    if (heuristicFunction == undefined) {
+    if (heuristicFunction === undefined) {
         heuristicFunction = () => 0;
     }
 
     const output = [grid];
+
+    if(!showAnimation) {
+        output.push(output[0].clone());
+    }
 
     const allTiles = [];
 
@@ -161,7 +162,6 @@ const dijkstra = (grid, showAnimation, heuristicWeight, heuristicFunction) => {
         return closestTile;
     }
 
-
     //Initialize
     for (let x = 0; x < grid.width; x++) {
         for (let y = 0; y < grid.height; y++) {
@@ -179,7 +179,7 @@ const dijkstra = (grid, showAnimation, heuristicWeight, heuristicFunction) => {
     //main loop
     let looping = true;
     let closestTile = getClosestUnvisitedTile();
-    while (closestTile != undefined && looping) {
+    while (closestTile !== undefined && looping) {
 
         const neighbors = grid.getAccessableNeighbors(closestTile.x, closestTile.y);
 

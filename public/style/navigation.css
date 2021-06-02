@@ -1,0 +1,123 @@
+#navigation {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--nav-text-color);
+    font-size: 20pt;
+}
+
+#navigation a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    transition-duration: 250ms;
+    display: block;
+    width: 100%;
+}
+
+#navigation > li {
+    text-decoration: none;
+}
+
+#navigation-links {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-category {
+    margin: 0px 0px 0px 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    flex: auto;
+}
+
+.navigation-category:hover {
+    text-decoration: underline;
+}
+
+.navigation-category ul {
+    outline: 1px solid black;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    color: var(--nav-text-color);
+    background-color: var(--primary);
+    list-style-type: none;
+    padding: 0px;
+    margin: 10px 0px 0px 0px;
+}
+
+.navigation-category:hover ul {
+    display: flex;
+}
+
+.navigation-category:hover > li {
+    width: 100%;
+    padding: 0px;
+}
+
+.navigation-category li {
+    transition: 125ms;
+}
+
+.navigation-category li:hover {
+    background-color: var(--active);
+}
+
+.navigation-category ul li {
+    background-color: var(--primary);
+    padding-left: 5px;
+}
+
+#navigation-checkbox {
+    display: none;
+}
+
+#navigation-checkbox-label {
+    display: none;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 768px) {
+
+    #navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #navigation-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    #navigation-checkbox-label {
+        display: flex;
+        padding: 5px 10px 5px 10px;
+    }
+
+    #navigation-checkbox:checked ~ #navigation-links {
+        display: flex;
+    }
+
+    .navigation-category ul {
+        outline: none;
+        position: static;
+        flex-direction: column;
+    }
+
+    .navigation-category:hover ul li {
+        padding-left: 10px;
+    }
+
+    .navigation-category {
+        padding: 0;
+        margin: 0;
+    }
+}

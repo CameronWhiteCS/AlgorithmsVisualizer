@@ -11,10 +11,7 @@ const BubbleSort = () => {
                 Bubble Sort
             </h1>
             <p>
-                Bubble sort is a toy sorting algorithm. It's not particularly efficient and its primary purpose is to be taught to computer science undergrads. Despite this, its one redeeming quality is that it's extremely easy to implement, making it a suitable choice for sorting lists of a known, small size.
-            </p>
-            <p>
-                Time complexity: O(N<sup>2</sup>)
+                Bubble sort is a toy sorting algorithm. It's not particularly efficient with a worst case time complexity of O(N<sup>2</sup>), and its primary purpose is to be taught to computer science undergrads. Despite this, its one redeeming quality is that it's extremely easy to implement, making it a suitable choice for sorting lists of a known, small size.
             </p>
             <h2>
                 Bubble Sort Description

@@ -57,8 +57,8 @@ class Heap {
         let right = this.getRightChild(index);
 
         while (
-            (this.max === true && ((left > this.heapArray[index] && left !== undefined) || (right > this.heapArray[index]) && right !== undefined)) ||
-            (this.max === false && ((left < this.heapArray[index] && left !== undefined) || (right < this.heapArray[index]) && right !== undefined))
+            (this.max === true && ((left > this.heapArray[index] && left !== undefined) || ((right > this.heapArray[index]) && right !== undefined))) ||
+            (this.max === false && ((left < this.heapArray[index] && left !== undefined) || ((right < this.heapArray[index]) && right !== undefined)))
         ) {
 
             if (left === undefined && right !== undefined) {

@@ -17,8 +17,12 @@ const MergeSort = () => {
                Merge Sort Description
             </h2>
             <ol>
-                <li>Iterate through an unsorted list and switch the position of any two adjacent items that are in the incorrect order.</li>
-                <li>Repeat step 1 until it results in 0 elements having their positions changed. At this point, the list is sorted.</li>
+                <li>Continuously partition the unsorted array into halves (and those halves into halves) until only partitions of size 1 remain.</li>
+                <li>Merge neighboring partitions into sorted partitions. The order of the merges is determined by the position of the partitions on the call stack.</li>
+                <ul>
+                    <li>Merging two partitions is done by using two pointers, each one tracking the location of the next item in its associated partition that needs to be merged. Whether or not the list is being sorted in ascending or descending order determines which of two elements identified by the pointers is moved into the sorted segment of the new partition. After moving an element into the sorted segment of the new partition, the associated pointer is moved one element forward..</li>
+                </ul>
+
             </ol>
 
             <SortingAlgorithm name="Merge Sort" sort={mergeSort} />

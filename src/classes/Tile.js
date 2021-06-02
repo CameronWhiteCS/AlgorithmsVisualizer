@@ -60,6 +60,8 @@ class Tile {
                 return '#4c2581';
             case 'visiting':
                 return '#2e44b3';
+            default:
+                return '#f0f';
         }
     }
 

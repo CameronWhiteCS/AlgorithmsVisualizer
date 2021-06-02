@@ -24,7 +24,7 @@ const KMeans = () => {
         initialValues: {
             numPoints: 500,
             clusters: 10,
-            animationDelay: 0
+            animationDelay: 500
         },
         onSubmit: (values) => {
             if (iterations.length > 1) {
@@ -174,6 +174,7 @@ const KMeans = () => {
      * Plays the K-Means algorithm animation by updating the algorithm state every N frames.
      */
     const playAnimation = () => {
+
         if (animating) {
             const previousIteration = iterations[iterations.length - 1];
             const newRepresentatives = moveRepresentatives(previousIteration.points, previousIteration.representatives);
@@ -193,7 +194,7 @@ const KMeans = () => {
                 });
 
                 setPage(page + 1);
-
+                
                 setTimeout(() => {
                     setTick(tick + 1);
                 }, formik.values.animationDelay);
@@ -266,7 +267,7 @@ const KMeans = () => {
                         <Form.Label htmlFor="animationDelay">
                             Animation delay (ms)
                         </Form.Label>
-                        <select name="animationDelay" defaultValue={0} className="form form-control" onChange={formik.handleChange}>
+                        <select name="animationDelay" defaultValue={500} className="form form-control" onChange={formik.handleChange}>
                             <option value="0">0</option>
                             <option value="500">500</option>
                             <option value="1000">1000</option>
@@ -276,12 +277,12 @@ const KMeans = () => {
                     </Form.Group>
                 </fieldset>
                 <br />
-                <Button type="submit" disabled={Object.keys(formik.errors).length > 0 || animating}>Visualize</Button>
+                <Button type="submit" disabled={Object.keys(formik.errors).length > 0 || animating}>{iterations.length === 1 ? "Visualize" : "New visualization"}</Button>
             </Form>
             <br />
-            <Button variant={"secondary"} disabled={animating || page <= 0} onClick={() => { setPage(page - 1) }}>{"Previous iteration"}</Button>
+            <Button variant={"secondary"} disabled={animating || page <= 0} onClick={() => { setPage(page - 1) }}>Previous iteration</Button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button variant={"secondary"} disabled={animating || page >= iterations.length - 1} onClick={() => { setPage(page + 1); }}>{"Next Iteration"}</Button>
+            <Button variant={"secondary"} disabled={animating || page >= iterations.length - 1} onClick={() => { setPage(page + 1); }}>Next Iteration</Button>
             <hr />
             <p>Iteration: {iterations.length > 0 ? page : 'Click \'visualize\' to start.'} &nbsp; Error: {iterations[page].error}</p>
             <KMeansCanvas iterations={iterations} page={page} width={WIDTH} height={HEIGHT} scaleFactor={SCALE_FACTOR} />
